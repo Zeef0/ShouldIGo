@@ -1,0 +1,77 @@
+
+$ligh-primary: #fff;
+$light-secondary:#f1f1f1; 
+
+$dark-primary: #000;
+$dark-secondary: rgba(0, 0, 0, 0.637);
+
+@mixin text-style-list {
+    padding: .4em;
+    font-weight: 400;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    transition:  all .6s;
+}
+
+@mixin rotate {
+    syntax: "<angle>";
+  initial-value: 132deg;
+    inherits: false;
+}
+div.container {
+    position: relative;
+    top: 0%;
+    nav {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background: #15447f;
+        color: $light-secondary;
+
+        .nav-logo {
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        ul.nav-list {
+            list-style: none;
+            display: flex;
+            justify-content: space-evenly;
+
+            & li {
+                @include text-style-list();
+
+                &:active, :link {
+                    @include text-style-list();
+                    text-decoration: none;
+                    color: $light-secondary !important;
+                }
+                &:hover{
+                    padding:  1rem;
+                    background: $dark-secondary;
+                    border-radius: 15%;
+                    color: $ligh-primary;
+                    cursor: pointer;
+                    @include rotate();
+                }
+
+                &:link:hover {
+                    padding:  1rem;
+                    background: $dark-secondary;
+                    border-radius: 15%;
+                    color: $ligh-primary;
+                    cursor: pointer;
+                }
+
+                &:active:hover {
+                    padding:  1rem;
+                    background: $dark-secondary;
+                    border-radius: 15%;
+                    color: $ligh-primary;
+                    cursor: pointer;
+                }
+
+        }
+    }
+    }
+}
